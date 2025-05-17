@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Puzzle Adventure</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+      <div class="game-header">
+        <h1>TECH PUZZLE ADVENTURE</h1>
+        <div class="game-stats">
+          <div class="stat-box">
+            <span class="stat-label">TIME</span>
+            <span id="timer" class="stat-value">00:00</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">MOVES</span>
+            <span id="moves" class="stat-value">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-label">LEVEL</span>
+            <span id="level" class="stat-value">1</span>
+          </div>
+        </div>
+      </div>
+  
+      <div class="game-area">
+        <div class="game-board">
+          <div id="puzzle" class="puzzle-container"></div>
+          <div id="message" class="message-box">
+            Slide the tiles to complete the image!
+          </div>
+        </div>
+  
+        <div class="game-controls">
+          <div class="buttons">
+            <button id="shuffle" class="game-button">SHUFFLE</button>
+            <button id="hint" class="game-button">HINT</button>
+          </div>
+          <div class="difficulty-controls">
+            <span class="difficulty-label">DIFFICULTY:</span>
+            <div class="difficulty-options">
+              <button class="difficulty-button active" data-size="3">3×3</button>
+              <button class="difficulty-button" data-size="4">4×4</button>
+              <button class="difficulty-button" data-size="5">5×5</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div id="start-screen" class="overlay-screen">
+        <div class="screen-content">
+          <h2>TECH PUZZLE ADVENTURE</h2>
+          <p>Rearrange the tiles to complete the tech image!</p>
+          <button id="start-game" class="screen-button">START GAME</button>
+        </div>
+      </div>
+  
+      <div id="win-screen" class="overlay-screen hidden">
+        <div class="screen-content">
+          <h2>PUZZLE SOLVED!</h2>
+          <div id="win-stats">
+            <p>Time: <span id="win-time">00:00</span></p>
+            <p>Moves: <span id="win-moves">0</span></p>
+          </div>
+          <div class="tech-info">
+            <h3 id="tech-term">Router</h3>
+            <p id="tech-definition">A router connects devices to the internet and each other in a network.</p>
+          </div>
+          <button id="play-again" class="screen-button">PLAY AGAIN</button>
+        </div>
+      </div>
+    </div>
+  
+    <audio id="tile-move" preload="auto">
+      <source src="https://www.soundjay.com/buttons/button-3.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="game-win" preload="auto">
+      <source src="https://www.soundjay.com/misc/sounds/magic-chime-01.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="button-click" preload="auto">
+      <source src="https://www.soundjay.com/buttons/button-1.mp3" type="audio/mpeg">
+    </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
